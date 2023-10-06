@@ -1,0 +1,19 @@
+<h1><%= @note.title %></h1>
+
+<p><%= @note.content %></p>
+
+<ul>
+  <li><%= link_to 'Edit', edit_note_path(@note) %></li>
+  <li>
+    <%=
+      link_to 'Delete',
+              note_path(@note),
+              data: {
+                turbo_method: :delete,
+                turbo_confirm: 'Are you sure?',
+              }
+    %>
+  </li>
+</ul>
+
+<%= link_to 'Home Page', root_path %>
